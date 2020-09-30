@@ -33,6 +33,7 @@ const runEnter = () => {
         inputValue = inputElement.property("value");
 
     let filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
+   
     // filter is working and returning correct data - need to rerender the table with filtered data
     console.log(filteredData);
 
