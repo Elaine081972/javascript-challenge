@@ -16,7 +16,7 @@ data.forEach((ufoReport) => {
 });
 
 // select the button
-// select the form
+// select the form - this doesn't seem to be working????
 let button = d3.select("#filter-btn"),
     form = d3.select("#filters");
 
@@ -29,5 +29,17 @@ const runEnter = () => {
     // select the input element and get the raw HTML node
     // get the value property of the input element
 
-    let inputElement = d3.select("#")
-}    
+    let inputElement = d3.select("#datetime"),
+        inputValue = inputElement.property("value");
+
+    let filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
+
+    console.log(filteredData);
+
+    
+}  
+
+
+// create event handlers
+button.on("click", runEnter);
+form.on("submit", runEnter);
