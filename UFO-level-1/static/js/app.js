@@ -1,8 +1,6 @@
 // from data.js
 var tableData = data;
 
-
-
 // get a reference to the table body
 let tbody = d3.select("tbody");
 
@@ -16,27 +14,29 @@ data.forEach((ufoReport) => {
 });
 
 // select the button
-// select the form - this doesn't seem to be working????
-var button = d3.select("#filter-btn");
-    //form = d3.select("#filters");
+// select the form - so the "enter" key can be used to submit the selection as well as the button
+let button = d3.select("#filter-btn"),
+    form = d3.select("#form");
 
 // complete the event handler function for the form
 const runEnter = () => {
-//button.on("click", function() {
+{
     // prevent the page from refreshing
     d3.event.preventDefault();
 
+    // clear the existing output
     tbody.html("");
     
-    // select the input element and get the raw HTML node(these all worked for console log)
+    // select the input element and get the raw HTML node (date selected)
     // get the value property of the input element
 
-        var inputElement = d3.select("#datetime");
-        var inputValue = inputElement.property("value");
-
+        let inputElement = d3.select("#datetime"),
+            inputValue = inputElement.property("value");
+  
+        //
         var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
    
-    // filter is working and returning correct data - need to rerender the table with filtered data
+    // filter is working and returning correct data 
         console.log(filteredData);
 
         filteredData.forEach(function(selections) {
@@ -52,4 +52,4 @@ const runEnter = () => {
 
 // create event handlers
 button.on("click", runEnter);
-//form.on("submit", runEnter);
+form.on("submit", runEnter);
