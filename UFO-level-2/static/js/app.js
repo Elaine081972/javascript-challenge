@@ -33,11 +33,18 @@ const runEnter = () => {
 
         let inputElement = d3.select("#datetime"),
             inputValue = inputElement.property("value");
+        
   
         var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
+
+        let inputElement = d3.select("#datetime"),
+            inputValue = inputElement.property("value");
+
+        var filteredCity = tableData.filter(tableData => tableData.city === inputValue);
    
     // filter is working and returning correct data 
         console.log(filteredData);
+        console.log(filteredCity);
 
     // append each filtered value of the input element to the table
         filteredData.forEach((entry) => {
