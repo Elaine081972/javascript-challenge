@@ -2,9 +2,10 @@
 var tableData = data;
 
 // get a reference to the table body
-let tbody = d3.select("tbody");
+const tbody = d3.select("tbody");
 
-// loop through the data and use d3 append values
+// loop through the data and use d3 to append one table row "tr" for each UFO report object
+// need to finish COMMENTING!!!
 data.forEach((ufoReport) => {
     let row = tbody.append("tr");
     Object.values(ufoReport).forEach(value =>{
@@ -20,7 +21,7 @@ let button = d3.select("#filter-btn"),
 
 // complete the event handler function for the form
 const runEnter = () => {
-{
+
     // prevent the page from refreshing
     d3.event.preventDefault();
 
@@ -33,23 +34,20 @@ const runEnter = () => {
         let inputElement = d3.select("#datetime"),
             inputValue = inputElement.property("value");
   
-        //
         var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
    
     // filter is working and returning correct data 
         console.log(filteredData);
 
-        filteredData.forEach(function(selections) {
-      
-        var row = tbody.append("tr");
-        Object.entries(selections).forEach(function([key, value]) {
-            var cell = row.append("td");
+    // append each filtered value of the input element to the table
+        filteredData.forEach((entry) => {
+        let row = tbody.append("tr");
+        Object.entries(entry).forEach(function([key, value]) {
+            let cell = row.append("td");
             cell.text(value);
         });
 });        
 };
-
-
 // create event handlers
 button.on("click", runEnter);
 form.on("submit", runEnter);
