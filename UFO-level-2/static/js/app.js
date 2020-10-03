@@ -31,23 +31,28 @@ const runEnter = () => {
     // select the input element and get the raw HTML node (date selected)
     // get the value property of the input element
 
-        let inputElements = d3.select("#datetime"),
-            inputValues= inputElements.property("value");
+        let dateinputElement = d3.select("#datetime"),
+            dateinputValue = dateinputElement.property("value");
+
+        let stateinputElement = d3.select("#statedata"),
+            stateinputValue = stateinputElement.property('value"');
+
+        var filteredState = tableData.filter(tableData => tableData.state === stateinputValue);
         
   
-        var filteredDate = tableData.filter(tableData => tableData.datetime === inputValues);
+        var filteredDate = tableData.filter(tableData => tableData.datetime === dateinputValue);
 
         let inputElement = d3.select("#citydata"),
             inputValue = inputElement.property("value");
 
         var filteredCity = tableData.filter(tableData => tableData.city === inputValue);
 
-        //var filteredData = tableData.filter(tableData => filteredCity); 
+        
    
     // filter is working and returning correct data 
         console.log(filteredDate);
         console.log(filteredCity);
-
+        console.log(filteredState)
     // append each filtered value of the input element to the table
         filteredData.forEach((entry) => {
         let row = tbody.append("tr");
