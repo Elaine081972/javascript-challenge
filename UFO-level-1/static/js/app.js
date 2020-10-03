@@ -5,7 +5,7 @@ var tableData = data;
 const tbody = d3.select("tbody");
 
 // loop through the data and use d3 to append one table row "tr" for each UFO report object
-// need to finish COMMENTING!!!
+// use d3 to append 1 cell per value, update each cell's text
 data.forEach((ufoReport) => {
     let row = tbody.append("tr");
     Object.values(ufoReport).forEach(value =>{
@@ -40,7 +40,7 @@ const runEnter = () => {
     // filter is working and returning correct data 
         //console.log(filteredData);
 
-    // append each filtered value of the input element to the table
+    // append each filtered value of the input element to the table to rerender
         filteredData.forEach((entry) => {
         let row = tbody.append("tr");
         Object.entries(entry).forEach(function([key, value]) {
