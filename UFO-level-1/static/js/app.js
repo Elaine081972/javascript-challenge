@@ -33,11 +33,12 @@ const runEnter = () => {
 
         let inputElement = d3.select("#datetime"),
             inputValue = inputElement.property("value");
-  
+   
+     // .filter is used to loop through tableData to find datetime values that equal the user inputs      
         var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
    
     // filter is working and returning correct data 
-        console.log(filteredData);
+        //console.log(filteredData);
 
     // append each filtered value of the input element to the table
         filteredData.forEach((entry) => {
