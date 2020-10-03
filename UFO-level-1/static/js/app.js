@@ -15,7 +15,7 @@ data.forEach((ufoReport) => {
 });
 
 // select the button
-// select the form - so the "enter" key can be used to submit the selection as well as the button
+// select the form - so the "enter" key can be used to submit the selection as well as the "button"
 let button = d3.select("#filter-btn"),
     form = d3.select("#form");
 
