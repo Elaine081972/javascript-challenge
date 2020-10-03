@@ -35,9 +35,10 @@ const runEnter = () => {
             dateinputValue = dateinputElement.property("value");
 
         let stateinputElement = d3.select("#statedata"),
-            stateinputValue = stateinputElement.property('value"');
+            stateinputValue = stateinputElement.property("value");
+        console.log(stateinputValue);    
 
-        var filteredState = tableData.filter(tableData => tableData.state === stateinputValue);
+        let filteredState = tableData.filter(tableData => tableData.state === stateinputValue);
         
   
         var filteredDate = tableData.filter(tableData => tableData.datetime === dateinputValue);
