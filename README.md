@@ -9,6 +9,6 @@ This assignment uses JavaScript and DOM manipulation to allow for loading of a U
 
 3. UFO-level-2 folder provides all necessary files for the optional multiple search categories website.
 
-4. The app.js file in the static folder provides most of the script to achieve the rendering of the table and search and "rerendering" of the table. "Event listeners" are used to trigger the filtering from user inputs. Users can use the "Filter Table/Enter" button or just hit "enter" on their keyboard to trigger the filtering. Dates can continue to be entered to have a new table rendered. "Refresh" will have the entire unfiltered table displayed.
+4. The app.js file in the static folder provides most of the script to achieve the rendering of the table and search and "rerendering" of the table. "Event listeners" are used to trigger the filtering from user inputs. Users can use the "Filter Table/Enter" button or just hit "enter" on their keyboard to trigger the filtering. Dates can continue to be entered to have a new table rendered. Standard "refresh" will have the entire unfiltered table displayed.
 
 
