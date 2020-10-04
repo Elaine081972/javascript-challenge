@@ -34,26 +34,39 @@ const runEnter = () => {
         let dateinputElement = d3.select("#datetime"),
             dateinputValue = dateinputElement.property("value");
 
-        let stateinputElement = d3.select("#statedata"),
-            stateinputValue = stateinputElement.property("value");
-        console.log(stateinputValue);    
+        let cityinputElement = d3.select("#citydata"),
+            cityinputValue = cityinputElement.property("value");
 
-        let filteredState = tableData.filter(tableData => tableData.state === stateinputValue);
-        
-  
+        let stateinputElement = d3.select("#statedata"),
+            stateinputValue = stateinputElement.property("value");   
+            
+        let countryinputElement = d3.select("#countrydata"),
+            countryinputValue = countryinputElement.property("value"); 
+
+        let shapeinputElement = d3.select("#shapedata"),
+            shapeinputValue = shapeinputElement.property("value"); 
+
         var filteredDate = tableData.filter(tableData => tableData.datetime === dateinputValue);
 
-        let inputElement = d3.select("#citydata"),
-            inputValue = inputElement.property("value");
+        var filteredCity = tableData.filter(tableData => tableData.city === cityinputValue);
 
-        var filteredCity = tableData.filter(tableData => tableData.city === inputValue);
+        let filteredState = tableData.filter(tableData => tableData.state === stateinputValue);
 
+        let filteredCountry = tableData.filter(tableData => tableData.country === countryinputValue);
+
+        let filteredShape = tableData.filter(tableData => tableData.shape === shapeinputValue);
         
+        var filteredData = tableData.filter(tableData => tableData.datetime === dateinputValue && 
+            tableData.city === cityinputValue && tableData.state === stateinputValue && 
+            tableData.country === countryinputValue && tableData.shape === shapeinputValue);
    
     // filter is working and returning correct data 
         console.log(filteredDate);
         console.log(filteredCity);
-        console.log(filteredState)
+        console.log(filteredState);
+        console.log(filteredCountry);
+        console.log(filteredShape);
+        console.log(filteredData);
     // append each filtered value of the input element to the table
         filteredData.forEach((entry) => {
         let row = tbody.append("tr");
