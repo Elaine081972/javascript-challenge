@@ -56,9 +56,9 @@ const runEnter = () => {
 
         let filteredShape = tableData.filter(tableData => tableData.shape === shapeinputValue);
         
-        var filteredData = tableData.filter(tableData => tableData.datetime === dateinputValue && 
-            tableData.city === cityinputValue && tableData.state === stateinputValue && 
-            tableData.country === countryinputValue && tableData.shape === shapeinputValue);
+        var filteredData = tableData.filter(tableData => tableData.datetime === dateinputValue || 
+            tableData.city === cityinputValue || tableData.state === stateinputValue ||
+            tableData.country === countryinputValue || tableData.shape === shapeinputValue);
    
     // filter is working and returning correct data 
         console.log(filteredDate);
